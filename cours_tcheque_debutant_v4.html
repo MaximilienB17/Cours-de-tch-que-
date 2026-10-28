@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mon cours de tchèque — Débutant</title>
+<style>
+:root{--ink:#2c211e;--muted:#6c5b55;--paper:#fffaf5;--card:#fff;--line:#eadbd2;--wine:#7d2038;--wine2:#a43b53;--tan:#e8d2bd;--soft:#f5e9df;--green:#276749;--red:#a12636}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:linear-gradient(135deg,#4b2d27,#7d2038);color:#fff;padding:34px 20px 28px}header .inner,main{max-width:1050px;margin:auto}header p{max-width:700px;color:#f8e9e7;margin:8px 0 0}h1{font-size:clamp(1.8rem,5vw,2.7rem);line-height:1.1;margin:0}h2{font-size:1.45rem;margin:0 0 14px;color:var(--wine)}h3{font-size:1.05rem;margin:20px 0 8px}main{padding:20px 14px 60px}.nav{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 24px}.nav a{display:inline-block;text-decoration:none;color:var(--wine);border:1px solid var(--line);background:white;border-radius:9px;padding:8px 12px;font-weight:650}.section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin:16px 0;box-shadow:0 4px 16px #4b2d2708;scroll-margin-top:12px}.intro{background:var(--soft);border-left:4px solid var(--wine);padding:12px 14px;border-radius:8px;margin:12px 0}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;margin:8px 0 14px}th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}th{background:#f7eee8;color:#4b2d27;font-weight:750}td.cz{font-weight:750;color:var(--wine)}.small{font-size:.92rem;color:var(--muted)}.pill{display:inline-block;background:#f4e4e7;color:var(--wine);padding:2px 8px;border-radius:999px;font-size:.85rem;font-weight:700}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.mini{border:1px solid var(--line);border-radius:12px;padding:13px;background:#fffdfb}.mini h3{margin:0 0 8px}.example{background:#fbf4ef;border-radius:8px;padding:10px 12px;margin:8px 0}.czword{color:var(--wine);font-weight:750}.warning{border-left:4px solid #b67a26;background:#fff6e4;padding:12px;border-radius:8px}.test-question{border:1px solid var(--line);border-radius:12px;padding:14px;margin:12px 0}.test-question label{display:block;margin:7px 0;cursor:pointer}.test-question input[type=text]{width:100%;max-width:480px;padding:10px;border:1px solid #cbb8ae;border-radius:8px;font:inherit}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.btn{border:0;border-radius:9px;padding:11px 16px;font:inherit;font-weight:750;cursor:pointer;background:var(--wine);color:white}.btn.secondary{background:var(--soft);color:var(--wine);border:1px solid var(--line)}#result{display:none;padding:15px;border-radius:10px;background:#f5e9df;margin-top:16px}.correct{color:var(--green);font-weight:700}.incorrect{color:var(--red);font-weight:700}
+.mask-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:16px 0}.mask-controls .hint{font-size:.9rem;color:var(--muted)}.maskable{position:relative;display:inline-block;cursor:pointer;border-radius:4px}.mask-content{display:inline-block}.mask-cover{position:absolute;inset:0;width:100%;min-width:2.2em;border:1px solid #7d2038;border-radius:4px;background:linear-gradient(135deg,#7d2038,#4b2d27);color:#fff;cursor:pointer;font:inherit;z-index:2;padding:0 5px;box-shadow:0 1px 3px #0002}.maskable.revealed .mask-cover{display:none}.maskable:focus-within{outline:2px solid #c18a94;outline-offset:2px}.maskable.revealed{background:#f9edf0}.topic-tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:-4px 0 14px}.topic-mask-btn{font-size:.9rem;padding:7px 11px}.topic-filter{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 18px}.topic-filter label{display:inline-flex;gap:7px;align-items:center;border:1px solid var(--line);background:#fffaf5;border-radius:9px;padding:8px 10px;cursor:pointer}.topic-filter input{accent-color:var(--wine)}.filter-note{font-size:.9rem;color:var(--muted)}.test-question[hidden]{display:none}footer{max-width:1050px;margin:auto;padding:0 18px 32px;color:var(--muted);font-size:.9rem}
+@media(max-width:600px){header{padding:27px 16px 23px}.section{padding:15px;border-radius:12px}th,td{padding:8px;font-size:.94rem}.nav a{font-size:.9rem}}
+</style>
+</head>
+<body>
+<header><div class="inner">
+  <h1>Mon cours de tchèque</h1>
+  <p>Fiche de révision pour débutant : vocabulaire essentiel, phrases utiles, conjugaison et futur. Les accents tchèques comptent : essaie de les apprendre dès le départ.</p>
+  <p><span class="pill">Niveau débutant</span> <span class="pill">Cours + test interactif</span></p>
+</div></header>
+<main>
+<div class="mask-controls"><button class="btn" id="maskToggle" type="button" aria-pressed="false">Activer le mode masqué</button><span class="hint" id="maskStatus">Le vocabulaire tchèque est visible.</span><span class="hint">Mode actif : clique sur une zone masquée pour révéler le mot, puis clique sur le mot pour le masquer à nouveau.</span></div>
+<nav class="nav" aria-label="Navigation du cours">
+<a href="#bases">Bases</a><a href="#pronoms">Pronoms</a><a href="#verbes">Verbes</a><a href="#nombres">Nombres</a><a href="#phrases">Phrases</a><a href="#temps">Temps</a><a href="#metiers">Métiers</a><a href="#futur">Futur</a><a href="#test">Test</a>
+</nav>
+
+<section class="section" id="bases">
+<h2>1. Les mots de base</h2>
+<div class="topic-tools"><button class="btn secondary topic-mask-btn" type="button" data-topic-mask="bases" aria-pressed="false">Masquer le tchèque de ce thème</button></div>
+<div class="table-wrap"><table><thead><tr><th>Français</th><th>Tchèque</th><th>Remarque</th></tr></thead><tbody>
+<tr><td>Salut</td><td class="cz">Ahoj</td><td>Familier, pour dire bonjour ou au revoir.</td></tr>
+<tr><td>Oui</td><td class="cz">Ano</td><td>Dans la conversation, on entend aussi « jo » (familier).</td></tr>
+<tr><td>Non</td><td class="cz">Ne</td><td></td></tr>
+<tr><td>Merci</td><td class="cz">Děkuji</td><td>« Díky » est plus familier.</td></tr>
+<tr><td>S’il te plaît / s’il vous plaît</td><td class="cz">Prosím</td><td>Peut aussi vouloir dire « je vous en prie » ou « pardon ? » selon le contexte.</td></tr>
+<tr><td>Au revoir</td><td class="cz">Na shledanou</td><td>Plus poli/formel. « Ahoj » est familier.</td></tr>
+<tr><td>Je ne comprends pas</td><td class="cz">Nerozumím</td><td>Très utile au quotidien.</td></tr>
+</tbody></table></div>
+<div class="intro"><strong>Astuce :</strong> en tchèque, les accents ne sont pas décoratifs. Par exemple, <em>č</em> se prononce comme « tch », et <em>š</em> comme « ch » dans « chat ».</div>
+</section>
+
+<section class="section" id="pronoms">
+<h2>2. Pronoms personnels</h2>
+<div class="topic-tools"><button class="btn secondary topic-mask-btn" type="button" data-topic-mask="pronoms" aria-pressed="false">Masquer le tchèque de ce thème</button></div>
+<div class="table-wrap"><table><thead><tr><th>Français</th><th>Tchèque</th></tr></thead><tbody>
+<tr><td>Je</td><td class="cz">já</td></tr><tr><td>Tu</td><td class="cz">ty</td></tr><tr><td>Il</td><td class="cz">on</td></tr><tr><td>Elle</td><td class="cz">ona</td></tr><tr><td>Ça / cela</td><td class="cz">ono</td></tr><tr><td>Nous</td><td class="cz">my</td></tr><tr><td>Vous (pluriel ou poli)</td><td class="cz">vy</td></tr><tr><td>Ils / elles</td><td class="cz">oni / ony</td></tr>
+</tbody></table></div>
+<p class="small">Le pronom est souvent omis en tchèque, car la terminaison du verbe indique déjà la personne : « Jsem Francouz » signifie « Je suis français ».</p>
+</section>
+
+<section class="section" id="verbes">
+<h2>3. Verbes essentiels à l’infinitif</h2>
+<div class="topic-tools"><button class="btn secondary topic-mask-btn" type="button" data-topic-mask="verbes" aria-pressed="false">Masquer le tchèque de ce thème</button></div>
+<div class="table-wrap"><table><thead><tr><th>Français</th><th>Tchèque</th><th>Exemple</th></tr></thead><tbody>
+<tr><td>Être</td><td class="cz">být</td><td>Jsem student. = Je suis étudiant.</td></tr>
+<tr><td>Comprendre</td><td class="cz">rozumět</td><td>Rozumím. = Je comprends.</td></tr>
+<tr><td>Apprendre / étudier</td><td class="cz">učit se</td><td>Učím se česky. = J’apprends le tchèque.</td></tr>
+<tr><td>Avoir</td><td class="cz">mít</td><td>Mám čas. = J’ai le temps.</td></tr>
+<tr><td>Savoir faire</td><td class="cz">umět</td><td>Umím plavat. = Je sais nager.</td></tr>
+<tr><td>Manger</td><td class="cz">jíst</td><td>Jím. = Je mange.</td></tr>
+<tr><td>Boire</td><td class="cz">pít</td><td>Piju vodu. = Je bois de l’eau.</td></tr>
+<tr><td>Cuisiner</td><td class="cz">vařit</td><td>Umím vařit. = Je sais cuisiner.</td></tr>
+<tr><td>Prendre des photos</td><td class="cz">fotit</td><td>Rád fotím. = J’aime prendre des photos (homme).</td></tr>
+<tr><td>Dessiner</td><td class="cz">kreslit</td><td>Umím kreslit. = Je sais dessiner.</td></tr>
+<tr><td>Conduire</td><td class="cz">řídit</td><td>Umím řídit. = Je sais conduire.</td></tr>
+<tr><td>Parler</td><td class="cz">mluvit</td><td>Mluvím česky. = Je parle tchèque.</td></tr>
+<tr><td>Aller à pied / marcher</td><td class="cz">jít</td><td>Jdu domů. = Je rentre à pied / je vais à la maison.</td></tr>
+<tr><td>Aller régulièrement / en véhicule</td><td class="cz">jezdit</td><td>Jezdím do školy. = Je vais à l’école (habituellement).</td></tr>
+<tr><td>Vouloir</td><td class="cz">chtít</td><td>Chci kávu. = Je veux un café.</td></tr>
+</tbody></table></div>
+
+<h3>Conjugaison : être, <em>být</em></h3>
+<div class="table-wrap"><table><thead><tr><th>Français</th><th>Affirmatif</th><th>Négatif</th></tr></thead><tbody>
+<tr><td>Je suis</td><td class="cz">jsem</td><td class="cz">nejsem</td></tr><tr><td>Tu es</td><td class="cz">jsi</td><td class="cz">nejsi</td></tr><tr><td>Il / elle est</td><td class="cz">je</td><td class="cz">není</td></tr><tr><td>Nous sommes</td><td class="cz">jsme</td><td class="cz">nejsme</td></tr><tr><td>Vous êtes</td><td class="cz">jste</td><td class="cz">nejste</td></tr><tr><td>Ils / elles sont</td><td class="cz">jsou</td><td class="cz">nejsou</td></tr>
+</tbody></table></div>
+<div class="example"><span class="czword">Jsem student.</span> = Je suis étudiant. <br><span class="czword">Nejsem lékař.</span> = Je ne suis pas médecin.</div>
+
+<h3>Conjugaison : comprendre, <em>rozumět</em></h3>
+<div class="table-wrap"><table><thead><tr><th>Français</th><th>Affirmatif</th><th>Négatif</th></tr></thead><tbody>
+<tr><td>Je comprends</td><td class="cz">rozumím</td><td class="cz">nerozumím</td></tr><tr><td>Tu comprends</td><td class="cz">rozumíš</td><td class="cz">nerozumíš</td></tr><tr><td>Il / elle comprend</td><td class="cz">rozumí</td><td class="cz">nerozumí</td></tr><tr><td>Nous comprenons</td><td class="cz">rozumíme</td><td class="cz">nerozumíme</td></tr><tr><td>Vous comprenez</td><td class="cz">rozumíte</td><td class="cz">nerozumíte</td></tr><tr><td>Ils / elles comprennent</td><td class="cz">rozumějí / rozumí</td><td class="cz">nerozumějí / nerozumí</td></tr>
+</tbody></table></div>
+
+<h3>Conjugaison : apprendre, <em>učit se</em></h3>
+<div class="table-wrap"><table><thead><tr><th>Français</th><th>Affirmatif</th><th>Négatif</th></tr></thead><tbody>
+<tr><td>J’apprends</td><td class="cz">učím se</td><td class="cz">neučím se</td></tr><tr><td>Tu apprends</td><td class="cz">učíš se</td><td class="cz">neučíš se</td></tr><tr><td>Il / elle apprend</td><td class="cz">učí se</td><td class="cz">neučí se</td></tr><tr><td>Nous apprenons</td><td class="cz">učíme se</td><td class="cz">neučíme se</td></tr><tr><td>Vous apprenez</td><td class="cz">učíte se</td><td class="cz">neučíte se</td></tr><tr><td>Ils / elles apprennent</td><td class="cz">učí se</td><td class="cz">neučí se</td></tr>
+</tbody></table></div>
+
+<h3>Conjugaison : avoir, <em>mít</em></h3>
+<div class="table-wrap"><table><thead><tr><th>Français</th><th>Affirmatif</th><th>Négatif</th></tr></thead><tbody>
+<tr><td>J’ai</td><td class="cz">mám</td><td class="cz">nemám</td></tr><tr><td>Tu as</td><td class="cz">máš</td><td class="cz">nemáš</td></tr><tr><td>Il / elle a</td><td class="cz">má</td><td class="cz">nemá</td></tr><tr><td>Nous avons</td><td class="cz">máme</td><td class="cz">nemáme</td></tr><tr><td>Vous avez</td><td class="cz">máte</td><td class="cz">nemáte</td></tr><tr><td>Ils / elles ont</td><td class="cz">mají</td><td class="cz">nemají</td></tr>
+</tbody></table></div>
+
+<h3>Conjugaison : savoir faire, <em>umět</em></h3>
+<div class="table-wrap"><table><thead><tr><th>Français</th><th>Affirmatif</th><th>Négatif</th></tr></thead><tbody>
+<tr><td>Je sais faire</td><td class="cz">umím</td><td class="cz">neumím</td></tr><tr><td>Tu sais faire</td><td class="cz">umíš</td><td class="cz">neumíš</td></tr><tr><td>Il / elle sait faire</td><td class="cz">umí</td><td class="cz">neumí</td></tr><tr><td>Nous savons faire</td><td class="cz">umíme</td><td class="cz">neumíme</td></tr><tr><td>Vous savez faire</td><td class="cz">umíte</td><td class="cz">neumíte</td></tr><tr><td>Ils / elles savent faire</td><td class="cz">umějí / umí</td><td class="cz">neumějí / neumí</td></tr>
+</tbody></table></div>
+<div class="warning"><strong>À distinguer :</strong> <em>umět</em> = savoir faire une activité apprise (<span class="czword">Umím plavat</span>, je sais nager) ; <em>moci</em> = pouvoir / avoir la possibilité (<span class="czword">Můžu jít?</span>, est-ce que je peux y aller ?).</div>
+</section>
+
+<section class="section" id="nombres">
+<h2>4. Les nombres de 0 à 10</h2>
+<div class="topic-tools"><button class="btn secondary topic-mask-btn" type="button" data-topic-mask="nombres" aria-pressed="false">Masquer le tchèque de ce thème</button></div>
+<div class="table-wrap"><table><thead><tr><th>Nombre</th><th>Tchèque</th></tr></thead><tbody>
+<tr><td>0</td><td class="cz">nula</td></tr><tr><td>1</td><td class="cz">jedna</td></tr><tr><td>2</td><td class="cz">dva</td></tr><tr><td>3</td><td class="cz">tři</td></tr><tr><td>4</td><td class="cz">čtyři</td></tr><tr><td>5</td><td class="cz">pět</td></tr><tr><td>6</td><td class="cz">šest</td></tr><tr><td>7</td><td class="cz">sedm</td></tr><tr><td>8</td><td class="cz">osm</td></tr><tr><td>9</td><td class="cz">devět</td></tr><tr><td>10</td><td class="cz">deset</td></tr>
+</tbody></table></div>
+<p class="small">Pour compter de façon générale, 1 peut aussi apparaître sous la forme <em>jeden</em> (masculin) ou <em>jedno</em> (neutre). Pour un numéro de téléphone, on énonce généralement les chiffres un par un.</p>
+</section>
+
+<section class="section" id="phrases">
+<h2>5. Phrases indispensables</h2>
+<div class="topic-tools"><button class="btn secondary topic-mask-btn" type="button" data-topic-mask="phrases" aria-pressed="false">Masquer le tchèque de ce thème</button></div>
+<div class="table-wrap"><table><thead><tr><th>Question / phrase</th><th>Réponse ou traduction</th></tr></thead><tbody>
+<tr><td class="cz">Odkud jsi?</td><td>D’où viens-tu ?<br><span class="czword">Jsem z Francie.</span> = Je viens de France.</td></tr>
+<tr><td class="cz">Jak se máš?</td><td>Comment vas-tu ?<br><span class="czword">Mám se dobře.</span> = Je vais bien.<br><span class="czword">Mám se dobře, děkuji.</span> = Je vais bien, merci.</td></tr>
+<tr><td class="cz">Jak se jmenuješ?</td><td>Comment t’appelles-tu ?<br><span class="czword">Jmenuji se …</span> = Je m’appelle …</td></tr>
+<tr><td class="cz">Jaké je tvoje telefonní číslo?</td><td>Quel est ton numéro de téléphone ?<br><span class="czword">Moje číslo je …</span> = Mon numéro est …</td></tr>
+<tr><td class="cz">Kolik ti je let?</td><td>Quel âge as-tu ?<br><span class="czword">Je mi dvacet let.</span> = J’ai vingt ans.</td></tr>
+<tr><td class="cz">Co děláš?</td><td>Qu’est-ce que tu fais dans la vie ?<br><span class="czword">Jsem student.</span> = Je suis étudiant.</td></tr>
+<tr><td class="cz">Nerozumím.</td><td>Je ne comprends pas.</td></tr>
+<tr><td class="cz">Kolik to stojí?</td><td>Combien ça coûte ?</td></tr>
+</tbody></table></div>
+<div class="intro">Les questions avec <em>ty</em> sont familières. Pour une personne inconnue, utilise la forme polie : <span class="czword">Jak se máte?</span> (Comment allez-vous ?), <span class="czword">Jak se jmenujete?</span> (Comment vous appelez-vous ?).</div>
+</section>
+
+<section class="section" id="temps">
+<h2>6. Jours de la semaine et repères de temps</h2>
+<div class="topic-tools"><button class="btn secondary topic-mask-btn" type="button" data-topic-mask="temps" aria-pressed="false">Masquer le tchèque de ce thème</button></div>
+<div class="table-wrap"><table><thead><tr><th>Français</th><th>Tchèque</th></tr></thead><tbody>
+<tr><td>Lundi</td><td class="cz">pondělí</td></tr><tr><td>Mardi</td><td class="cz">úterý</td></tr><tr><td>Mercredi</td><td class="cz">středa</td></tr><tr><td>Jeudi</td><td class="cz">čtvrtek</td></tr><tr><td>Vendredi</td><td class="cz">pátek</td></tr><tr><td>Samedi</td><td class="cz">sobota</td></tr><tr><td>Dimanche</td><td class="cz">neděle</td></tr><tr><td>Aujourd’hui</td><td class="cz">dnes</td></tr><tr><td>Demain</td><td class="cz">zítra</td></tr><tr><td>Hier</td><td class="cz">včera</td></tr><tr><td>Semaine</td><td class="cz">týden</td></tr><tr><td>Week-end</td><td class="cz">víkend</td></tr><tr><td>Maintenant</td><td class="cz">teď</td></tr><tr><td>Plus tard</td><td class="cz">později</td></tr>
+</tbody></table></div>
+<div class="example"><span class="czword">Dnes je středa.</span> = Aujourd’hui, c’est mercredi.<br><span class="czword">Zítra je čtvrtek.</span> = Demain, c’est jeudi.<br><span class="czword">O víkendu</span> = le week-end.</div>
+</section>
+
+<section class="section" id="metiers">
+<h2>7. Métiers et nationalités utiles</h2>
+<div class="topic-tools"><button class="btn secondary topic-mask-btn" type="button" data-topic-mask="metiers" aria-pressed="false">Masquer le tchèque de ce thème</button></div>
+<div class="table-wrap"><table><thead><tr><th>Français</th><th>Tchèque (masculin)</th><th>Tchèque (féminin)</th></tr></thead><tbody>
+<tr><td>Avocat</td><td class="cz">právník / advokát</td><td class="cz">právnička / advokátka</td></tr>
+<tr><td>Médecin</td><td class="cz">lékař</td><td class="cz">lékařka</td></tr>
+<tr><td>Étudiant</td><td class="cz">student</td><td class="cz">studentka</td></tr>
+<tr><td>Ingénieur</td><td class="cz">inženýr</td><td class="cz">inženýrka</td></tr>
+<tr><td>Professeur / enseignant</td><td class="cz">učitel</td><td class="cz">učitelka</td></tr>
+<tr><td>Cuisinier</td><td class="cz">kuchař</td><td class="cz">kuchařka</td></tr>
+<tr><td>Photographe</td><td class="cz">fotograf</td><td class="cz">fotografka</td></tr>
+<tr><td>Serveur</td><td class="cz">číšník</td><td class="cz">servírka</td></tr>
+<tr><td>Informaticien</td><td class="cz">programátor</td><td class="cz">programátorka</td></tr>
+</tbody></table></div>
+<p class="small">Exemples : <span class="czword">Jsem student.</span> = Je suis étudiant (homme). <span class="czword">Jsem studentka.</span> = Je suis étudiante. Après <em>jsem</em>, on ne met pas d’article.</p>
+</section>
+
+<section class="section" id="futur">
+<h2>8. Dire ce qu’on va faire : <em>budu</em> et <em>půjdu</em></h2>
+<div class="topic-tools"><button class="btn secondary topic-mask-btn" type="button" data-topic-mask="futur" aria-pressed="false">Masquer le tchèque de ce thème</button></div>
+<h3>Le futur avec <em>budu</em></h3>
+<p>Pour beaucoup d’actions, on utilise <strong>budu + infinitif</strong> : « je vais… / je ferai… ».</p>
+<div class="example"><span class="czword">Budu vařit.</span> = Je vais cuisiner.<br><span class="czword">Budu se učit česky.</span> = Je vais étudier le tchèque.<br><span class="czword">Budu pracovat.</span> = Je vais travailler.<br><span class="czword">Budu fotit.</span> = Je vais prendre des photos.</div>
+<div class="table-wrap"><table><thead><tr><th>Français</th><th>Forme de « être » au futur</th></tr></thead><tbody>
+<tr><td>Je serai / je vais être</td><td class="cz">budu</td></tr><tr><td>Tu seras</td><td class="cz">budeš</td></tr><tr><td>Il / elle sera</td><td class="cz">bude</td></tr><tr><td>Nous serons</td><td class="cz">budeme</td></tr><tr><td>Vous serez</td><td class="cz">budete</td></tr><tr><td>Ils / elles seront</td><td class="cz">budou</td></tr>
+</tbody></table></div>
+<h3>Le cas particulier de « aller » : <em>půjdu</em></h3>
+<p>Pour dire « je vais aller quelque part », le tchèque utilise souvent le futur du verbe <em>jít</em> : <strong>půjdu</strong>. Pour aller à pied, c’est le choix courant.</p>
+<div class="example"><span class="czword">Půjdu do posilovny.</span> = Je vais aller à la salle de sport.<br><span class="czword">Půjdu do školy.</span> = Je vais aller à l’école.<br><span class="czword">Půjdu domů.</span> = Je vais rentrer chez moi à pied / je vais aller à la maison.</div>
+<p>Pour un déplacement en véhicule ou un trajet habituel, le verbe est souvent <em>jet / jezdit</em>. Le futur de <em>jet</em> est <strong>pojedu</strong>.</p>
+<div class="example"><span class="czword">Pojedu do Prahy autem.</span> = Je vais aller à Prague en voiture.<br><span class="czword">Pojedu autobusem.</span> = Je vais prendre le bus / j’irai en bus.<br><span class="czword">Budu jezdit do školy autobusem.</span> = J’irai à l’école en bus (de façon régulière).</div>
+<div class="warning"><strong>À retenir :</strong> <em>budu + infinitif</em> marche avec des verbes comme travailler, cuisiner ou étudier. Pour un déplacement ponctuel, apprends surtout <em>půjdu</em> (aller à pied) et <em>pojedu</em> (aller en véhicule). Évite « budu jít » pour dire simplement « je vais aller ».</div>
+</section>
+
+<section class="section" id="test">
+<h2>9. Test de révision</h2>
+<p>Réponds sans regarder le cours, puis clique sur « Corriger ». Les accents sont recommandés. Pour certaines réponses, les variantes courantes sont acceptées.</p>
+<form id="quiz">
+<div class="intro"><strong>Choisis les thèmes que tu as révisés.</strong> Le test te demande surtout de traduire de petites phrases du français vers le tchèque, ou de retrouver comment dire une expression. Écris la réponse sans regarder le cours. Les questions sont tirées au hasard.</div>
+<div class="topic-filter" id="topicFilters">
+<label><input type="checkbox" value="bases" checked> Bases</label><label><input type="checkbox" value="pronoms" checked> Pronoms</label><label><input type="checkbox" value="verbes" checked> Verbes</label><label><input type="checkbox" value="nombres" checked> Nombres</label><label><input type="checkbox" value="phrases" checked> Phrases</label><label><input type="checkbox" value="temps" checked> Temps</label><label><input type="checkbox" value="metiers" checked> Métiers</label><label><input type="checkbox" value="futur" checked> Futur</label>
+</div>
+<div class="grid" style="align-items:end"><div><label for="questionCount"><strong>Nombre de questions</strong></label><select id="questionCount" style="display:block;width:100%;max-width:280px;padding:10px;border:1px solid #cbb8ae;border-radius:8px;font:inherit;margin-top:6px"><option value="10">10 questions</option><option value="15" selected>15 questions</option><option value="20">20 questions</option><option value="30">30 questions</option><option value="all">Toutes les questions disponibles</option></select></div><div class="small" id="filterNote"></div></div>
+<div class="actions"><button class="btn" type="button" id="newQuizBtn">Générer un nouveau test</button><button class="btn secondary" type="button" id="gradeQuizBtn">Corriger le test</button><button class="btn secondary" type="button" id="resetQuizBtn">Effacer mes réponses</button></div>
+<div id="quizQuestions"></div><div id="result" aria-live="polite"></div>
+</form>
+</section>
+</main>
+<footer>Fiche personnelle de révision. Le tchèque varie selon le contexte et le niveau de politesse : commence par ces formes, puis ajoute du vocabulaire au fil de tes conversations.</footer>
+<script>
+// Le mode global masque tous les mots tchèques ; chaque thème peut aussi être masqué séparément.
+let maskMode = false;
+
+function sectionIsMasked(el){
+  const section = el.closest('.section');
+  return !!section && section.classList.contains('theme-masked');
+}
+function refreshMasks(){
+  document.querySelectorAll('.maskable').forEach(el => {
+    const cover = el.querySelector('.mask-cover');
+    if(cover) cover.textContent = el.classList.contains('revealed') ? 'Masquer' : 'Révéler';
+  });
+}
+function setMaskMode(enabled){
+  maskMode = enabled;
+  const toggle = document.getElementById('maskToggle');
+  toggle.setAttribute('aria-pressed', String(maskMode));
+  toggle.textContent = maskMode ? 'Désactiver le mode masqué' : 'Activer le mode masqué';
+  document.getElementById('maskStatus').textContent = maskMode
+    ? 'Mode masqué actif : clique sur une couverture pour révéler le tchèque.'
+    : 'Le vocabulaire tchèque est visible, sauf dans les thèmes masqués séparément.';
+  document.querySelectorAll('.maskable').forEach(el => {
+    if(maskMode || sectionIsMasked(el)) el.classList.remove('revealed');
+    else el.classList.add('revealed');
+  });
+  refreshMasks();
+}
+function makeMaskable(el){
+  if(el.closest('.maskable')) return;
+  const content = document.createElement('span');
+  content.className = 'mask-content';
+  while(el.firstChild) content.appendChild(el.firstChild);
+  const wrapper = document.createElement('span');
+  wrapper.className = 'maskable revealed';
+  wrapper.dataset.userRevealed = 'true';
+  wrapper.setAttribute('role','group');
+  wrapper.setAttribute('aria-label','Mot tchèque masquable');
+  wrapper.appendChild(content);
+
+  const cover = document.createElement('button');
+  cover.type = 'button';
+  cover.className = 'mask-cover';
+  cover.textContent = 'Masquer';
+  cover.setAttribute('aria-label','Masquer ou révéler ce mot tchèque');
+  cover.addEventListener('click', event => {
+    event.stopPropagation();
+    wrapper.classList.toggle('revealed');
+    wrapper.dataset.userRevealed = wrapper.classList.contains('revealed') ? 'true' : 'false';
+    cover.textContent = wrapper.classList.contains('revealed') ? 'Masquer' : 'Révéler';
+  });
+  wrapper.addEventListener('click', event => {
+    if(event.target === cover) return;
+    wrapper.classList.toggle('revealed');
+    wrapper.dataset.userRevealed = wrapper.classList.contains('revealed') ? 'true' : 'false';
+    cover.textContent = wrapper.classList.contains('revealed') ? 'Masquer' : 'Révéler';
+  });
+  wrapper.appendChild(cover);
+  el.appendChild(wrapper);
+}
+document.querySelectorAll('td.cz, .czword').forEach(makeMaskable);
+document.getElementById('maskToggle').addEventListener('click', () => setMaskMode(!maskMode));
+
+document.querySelectorAll('[data-topic-mask]').forEach(button => {
+  button.addEventListener('click', () => {
+    const section = document.getElementById(button.dataset.topicMask);
+    const isMasked = section.classList.toggle('theme-masked');
+    button.setAttribute('aria-pressed', String(isMasked));
+    button.textContent = isMasked ? 'Afficher le tchèque de ce thème' : 'Masquer le tchèque de ce thème';
+    section.querySelectorAll('.maskable').forEach(el => {
+      if(isMasked || maskMode) el.classList.remove('revealed');
+      else el.classList.add('revealed');
+    });
+    refreshMasks();
+  });
+});
+
+const questionBank = [
+{t:"bases",q:"Traduis en tchèque : « Bonjour ! » (familier)",x:1,a:["ahoj"],s:"Ahoj"},
+{t:"bases",q:"Comment dit-on « merci » en tchèque ?",x:1,a:["dekuji","diky"],s:"Děkuji (ou Díky, familier)"},
+{t:"bases",q:"Comment dit-on « oui » en tchèque ?",x:1,a:["ano"],s:"Ano"},
+{t:"bases",q:"Comment dit-on « non » en tchèque ?",x:1,a:["ne"],s:"Ne"},
+{t:"bases",q:"Traduis en tchèque : « Au revoir » (formel)",x:1,a:["na shledanou"],s:"Na shledanou"},
+{t:"bases",q:"Traduis en tchèque : « Bonne nuit »",x:1,a:["dobrou noc"],s:"Dobrou noc"},
+{t:"pronoms",q:"Comment dit-on « je » en tchèque ?",x:1,a:["ja"],s:"Já"},
+{t:"pronoms",q:"Comment dit-on « tu » en tchèque ?",x:1,a:["ty"],s:"Ty"},
+{t:"pronoms",q:"Comment dit-on « nous » en tchèque ?",x:1,a:["my"],s:"My"},
+{t:"pronoms",q:"Comment dit-on « vous » au pluriel ou par politesse ?",x:1,a:["vy"],s:"Vy"},
+{t:"pronoms",q:"Traduis en tchèque : « elle »",x:1,a:["ona"],s:"Ona"},
+{t:"verbes",q:"Traduis en tchèque : « Je suis étudiant. » (homme)",x:1,a:["jsem student"],s:"Jsem student."},
+{t:"verbes",q:"Traduis en tchèque : « J'ai un livre. »",x:1,a:["mam knihu"],s:"Mám knihu."},
+{t:"verbes",q:"Comment dit-on « Je comprends » en tchèque ?",x:1,a:["rozumim"],s:"Rozumím."},
+{t:"verbes",q:"Traduis en tchèque : « Je ne comprends pas. »",x:1,a:["nerozumim"],s:"Nerozumím."},
+{t:"verbes",q:"Comment dit-on « J'apprends le tchèque » ?",x:1,a:["ucim se cesky","ucim se cesky jazyk"],s:"Učím se česky."},
+{t:"verbes",q:"Traduis en tchèque : « Je bois de l'eau. »",x:1,a:["piju vodu"],s:"Piju vodu."},
+{t:"verbes",q:"Traduis en tchèque : « Je mange. »",x:1,a:["jim"],s:"Jím."},
+{t:"verbes",q:"Comment dit-on « Je parle » en tchèque ?",x:1,a:["mluvim"],s:"Mluvím."},
+{t:"verbes",q:"Traduis en tchèque : « Je veux manger. »",x:1,a:["chci jist"],s:"Chci jíst."},
+{t:"verbes",q:"Traduis en tchèque : « Je n'ai pas de temps. »",x:1,a:["nemam cas"],s:"Nemám čas."},
+{t:"verbes",q:"Comment dit-on « Je sais faire / je suis capable de » ?",x:1,a:["umim"],s:"Umím."},
+{t:"nombres",q:"Comment dit-on « trois » en tchèque ?",x:1,a:["tri"],s:"Tři"},
+{t:"nombres",q:"Traduis en tchèque : « cinq »",x:1,a:["pet"],s:"Pět"},
+{t:"nombres",q:"Comment dit-on « huit » en tchèque ?",x:1,a:["osm"],s:"Osm"},
+{t:"nombres",q:"Traduis en tchèque : « dix »",x:1,a:["deset"],s:"Deset"},
+{t:"nombres",q:"Comment dit-on « un » au masculin en tchèque ?",x:1,a:["jeden"],s:"Jeden"},
+{t:"phrases",q:"Traduis en tchèque : « Comment vas-tu ? »",x:1,a:["jak se mas"],s:"Jak se máš?"},
+{t:"phrases",q:"Comment dit-on « Je vais bien » en tchèque ?",x:1,a:["mam se dobre"],s:"Mám se dobře."},
+{t:"phrases",q:"Traduis en tchèque : « Comment tu t'appelles ? »",x:1,a:["jak se jmenujes"],s:"Jak se jmenuješ?"},
+{t:"phrases",q:"Comment dit-on « Enchanté(e) » en tchèque ?",x:1,a:["tesi me"],s:"Těší mě."},
+{t:"phrases",q:"Traduis en tchèque : « Je suis français. » (homme)",x:1,a:["jsem francouz"],s:"Jsem Francouz."},
+{t:"phrases",q:"Traduis en tchèque : « Je suis français. » (femme)",x:1,a:["jsem francouzka"],s:"Jsem Francouzka."},
+{t:"temps",q:"Comment dit-on « aujourd'hui » en tchèque ?",x:1,a:["dnes"],s:"Dnes"},
+{t:"temps",q:"Traduis en tchèque : « demain »",x:1,a:["zitra"],s:"Zítra"},
+{t:"temps",q:"Comment dit-on « lundi » en tchèque ?",x:1,a:["pondeli"],s:"Pondělí"},
+{t:"temps",q:"Traduis en tchèque : « le matin »",x:1,a:["rano"],s:"Ráno"},
+{t:"temps",q:"Comment dit-on « vendredi » en tchèque ?",x:1,a:["patek"],s:"Pátek"},
+{t:"metiers",q:"Comment dit-on « étudiant » au masculin ?",x:1,a:["student"],s:"Student"},
+{t:"metiers",q:"Traduis en tchèque : « Je suis médecin. » (homme)",x:1,a:["jsem lekar"],s:"Jsem lékař."},
+{t:"metiers",q:"Comment dit-on « professeur » au masculin en tchèque ?",x:1,a:["ucitel"],s:"Učitel"},
+{t:"metiers",q:"Traduis en tchèque : « ingénieur »",x:1,a:["inzenyr"],s:"Inženýr"},
+{t:"metiers",q:"Comment dit-on « étudiante » en tchèque ?",x:1,a:["studentka"],s:"Studentka"},
+{t:"futur",q:"Traduis en tchèque : « Je vais cuisiner. »",x:1,a:["budu varit"],s:"Budu vařit."},
+{t:"futur",q:"Comment dit-on « J'irai à pied. » en tchèque ?",x:1,a:["pujdu"],s:"Půjdu."},
+{t:"futur",q:"Comment dit-on « J'irai en véhicule. » en tchèque ?",x:1,a:["pojedu"],s:"Pojedu."},
+{t:"futur",q:"Traduis en tchèque : « Je vais étudier. »",x:1,a:["budu se ucit"],s:"Budu se učit."},
+{t:"futur",q:"Traduis en tchèque : « Je vais travailler. »",x:1,a:["budu pracovat"],s:"Budu pracovat."},
+{t:"futur",q:"Traduis en tchèque : « Je vais à la salle de sport à pied. »",x:1,a:["pujdu do posilovny"],s:"Půjdu do posilovny."}
+];
+const themeNames={bases:"Bases",pronoms:"Pronoms",verbes:"Verbes",nombres:"Nombres",phrases:"Phrases",temps:"Temps",metiers:"Métiers",futur:"Futur"};
+let activeQuestions=[],previousIds=[];
+function norm(s){return(s||"").trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[.!?']/g,"").replace(/\s+/g," ");}
+function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function selectedThemes(){return[...document.querySelectorAll("#topicFilters input:checked")].map(x=>x.value);}
+function updateFilterNote(){let themes=selectedThemes(),n=questionBank.filter(q=>themes.includes(q.t)).length;document.getElementById("filterNote").textContent=n?n+" questions disponibles dans "+themes.length+" thème(s).":"Coche au moins un thème.";}
+function generateQuiz(){
+ const themes=selectedThemes(),pool=questionBank.filter(q=>themes.includes(q.t)),box=document.getElementById("quizQuestions"),result=document.getElementById("result");
+ result.style.display="none";result.innerHTML="";
+ if(!pool.length){box.innerHTML='<p class="warning">Coche au moins un thème pour générer un test.</p>';activeQuestions=[];return;}
+ let v=document.getElementById("questionCount").value,n=v==="all"?pool.length:Math.min(+v,pool.length),mixed=shuffle(pool);
+ if(pool.length>n&&previousIds.length){let fresh=mixed.filter(q=>!previousIds.includes(questionBank.indexOf(q))),old=mixed.filter(q=>previousIds.includes(questionBank.indexOf(q)));mixed=[...fresh,...old];}
+ activeQuestions=mixed.slice(0,n);previousIds=activeQuestions.map(q=>questionBank.indexOf(q));box.innerHTML="";
+ activeQuestions.forEach((q,i)=>{let card=document.createElement("div");card.className="test-question";card.dataset.index=i;let title=document.createElement("strong");title.textContent=(i+1)+". ["+themeNames[q.t]+"] "+q.q;card.appendChild(title);
+ if(q.x){card.appendChild(document.createElement("br"));let input=document.createElement("input");input.type="text";input.name="answer"+i;input.placeholder="Ta réponse…";input.autocomplete="off";input.style.marginTop="10px";card.appendChild(input);}
+ else shuffle(q.o).forEach(opt=>{let lab=document.createElement("label"),input=document.createElement("input");input.type="radio";input.name="answer"+i;input.value=opt;lab.appendChild(input);lab.appendChild(document.createTextNode(" "+opt));card.appendChild(lab);});
+ box.appendChild(card);});
+ document.getElementById("filterNote").textContent=activeQuestions.length+" questions générées sur "+pool.length+" disponibles.";
+}
+function gradeQuiz(){
+ if(!activeQuestions.length){generateQuiz();if(!activeQuestions.length)return;}
+ let score=0,details=[];
+ activeQuestions.forEach((q,i)=>{let card=document.querySelector('.test-question[data-index="'+i+'"]'),checked=card.querySelector('input[type=radio]:checked'),txt=card.querySelector('input[type=text]'),got=checked?checked.value:(txt?txt.value:""),ok=q.x?q.a.some(x=>norm(x)===norm(got)):norm(got)===norm(q.a);if(ok)score++;details.push("<p>"+(i+1)+". "+(ok?'<span class="correct">Correct</span>':'<span class="incorrect">À revoir</span>')+" · Réponse : <strong>"+q.s+"</strong></p>");});
+ let r=document.getElementById("result");r.style.display="block";r.innerHTML="<h3>Ton résultat : "+score+"/"+activeQuestions.length+"</h3>"+(score===activeQuestions.length?"Parfait !":score/activeQuestions.length>=.7?"Bien joué, révise les réponses ratées.":"Continue à réviser puis relance un test.")+details;r.scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+document.querySelectorAll("#topicFilters input").forEach(x=>x.addEventListener("change",updateFilterNote));
+document.getElementById("newQuizBtn").addEventListener("click",generateQuiz);
+document.getElementById("gradeQuizBtn").addEventListener("click",gradeQuiz);
+document.getElementById("resetQuizBtn").addEventListener("click",()=>{document.querySelectorAll("#quizQuestions input").forEach(x=>{if(x.type==="radio")x.checked=false;else x.value="";});document.getElementById("result").style.display="none";});
+updateFilterNote();generateQuiz();
+</script>
+</body>
+</html>
